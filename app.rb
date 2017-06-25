@@ -8,9 +8,8 @@ post '/gateway' do
 	action, query = get_action_query message
 	case action
 		when 'wiki'
-		  # resp = get_wiki query
-		  # respond_message resp
-		  respond_message query
+		  resp = get_wiki query
+		  respond_message resp
 	end
 end
 
