@@ -6,7 +6,6 @@ post '/gateway' do
 	message = params[:text].gsub(params[:trigger_word], '').strip
 	resp = get_wiki message
 	respond_message resp
-	end
 end
 
 def get_action_query message
