@@ -5,18 +5,18 @@ require 'json'
 post '/gateway' do
 	message = params[:text].gsub(params[:trigger_word], '').strip
 	action = 'wiki'
-	# action, query = get_qction_query message
+	action, query = get_action_query message
 	case action
 		when 'wiki'
 		  # resp = get_wiki query
 		  # respond_message resp
-		  respond_message "hello"
+		  respond_message query
 	end
 end
 
 def get_action_query message
 	message_arr = message.split(' ')
-	action, query = message[0].strip.downcase, message[1..-1].join(' ')
+	action, query = message_arr[0].strip.downcase, message_arr[1..-1].join(' ')
 	return [action, query]
 end 
 
