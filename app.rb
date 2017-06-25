@@ -4,12 +4,8 @@ require 'json'
 
 post '/gateway' do
 	message = params[:text].gsub(params[:trigger_word], '').strip
-	action = 'wiki'
-	action, query = get_action_query message
-	case action
-		when 'wiki'
-		  resp = get_wiki query
-		  respond_message resp
+	resp = get_wiki message
+	respond_message resp
 	end
 end
 
