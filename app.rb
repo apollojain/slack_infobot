@@ -12,7 +12,6 @@ post '/gateway' do
 		when 'wiki'
 		  resp = get_wiki query
 		  respond_message resp
-		when 'dictionary'
 	end
 end
 
