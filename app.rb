@@ -22,7 +22,7 @@ end
 
 def respond_message message
 	content_type :json
-	{:text => message}.to_sjson  
+	{:text => message}.to_json  
 end
 
 def get_wiki search_term
