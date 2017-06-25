@@ -3,8 +3,8 @@ require 'httparty'
 require 'json'
 
 post '/gateway' do
-	# message = params[:text].gsub(params[:trigger_word], '').strip
-
+	message = params[:text].gsub(params[:trigger_word], '').strip
+	action = 'wiki'
 	# action, query = get_qction_query message
 	case action
 		when 'wiki'
