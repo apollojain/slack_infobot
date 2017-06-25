@@ -36,6 +36,7 @@ def get_wiki search_term
 	else 
 		return resp["query"]["pages"][key]["extract"]
 	end
+end
 
 
 
