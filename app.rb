@@ -3,10 +3,11 @@ require 'httparty'
 require 'json'
 
 post '/gateway' do
+	puts "Checkpoint 1"
 	message = params[:text].gsub(params[:trigger_word], '').strip
 
 	action, query = get_qction_query message
-
+	puts "Checkpoint 2"
 	case action
 		when 'wiki'
 		  resp = get_wiki query
